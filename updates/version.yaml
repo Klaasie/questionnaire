@@ -1,0 +1,6 @@
+1.0.0:
+    - First version of Questionnaire
+    - 20161108_000001_create_categories_table.php
+    - 20161108_000002_create_questions_table.php
+    - 20161108_000003_create_answers_table.php
+    - 20161108_000004_create_inputs_table.php
