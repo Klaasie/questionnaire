@@ -1,0 +1,20 @@
+<form>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Which answer should the question be linked to?</h4>
+    </div>
+    <div class="modal-body">
+        <input type="hidden" name="follow_up_question_id" value="<?= $sourceQuestionId ?>">
+        <select class="form-control custom-select select2-hidden-accessible" name="answer_id">
+            <?php foreach($answers as $answer): ?>
+                <option value="<?= $answer->getKey() ?>">
+                    <?= $answer->getText() ?>
+                </option>
+            <?php endforeach; ?>>
+        </select>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Blue Pill</button>
+        <button type="submit" class="btn btn-primary" data-request="onNestQuestion" data-dismiss="modal">Red Pill</button>
+    </div>
+</form>

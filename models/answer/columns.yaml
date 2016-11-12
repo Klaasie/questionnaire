@@ -3,6 +3,10 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    text:
+        label: Answer
         searchable: true
+    created_at:
+        label: Created at
+    modified_at:
+        label: Modified at

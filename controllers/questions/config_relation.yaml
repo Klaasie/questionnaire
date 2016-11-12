@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+answers:
+    label: Answers
+    deferredBinding: true
+    view:
+        list: $/klaasie/questionnaire/models/answer/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/klaasie/questionnaire/models/answer/fields.yaml
+        list: $/klaasie/questionnaire/models/answer/columns.yaml
+        recordsPerPage: 10

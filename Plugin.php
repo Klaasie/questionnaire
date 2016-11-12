@@ -85,11 +85,17 @@ class Plugin extends PluginBase
         return [
             'questionnaire' => [
                 'label'       => 'Questionnaire',
-                'url'         => Backend::url('klaasie/questionnaire/categories'),
+                'url'         => Backend::url('klaasie/questionnaire/index'),
                 'icon'        => 'icon-question-circle',
                 'permissions' => ['klaasie.questionnaire.*'],
                 'order'       => 500,
                 'sideMenu' => [
+//                    'questionnaire' => [
+//                        'label'       => 'Questionnaire',
+//                        'icon'        => 'icon-object-group',
+//                        'url'         => Backend::url('klaasie/questionnaire/index'),
+//                        'permissions' => ['klaasie.questionnaire.index']
+//                    ],
                     'category' => [
                         'label'       => 'Categories',
                         'icon'        => 'icon-object-group',

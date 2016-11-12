@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Index
+
+# Model Form Field configuration
+form: $/klaasie/questionnaire/models/category/fields.yaml
+
+# Model Class name
+modelClass: Klaasie\Questionnaire\Models\Category
+
+# Default redirect location
+defaultRedirect: klaasie/questionnaire/index
+
+# Create page
+create:
+    title: Create Index
+    redirect: klaasie/questionnaire/index/update/:id
+    redirectClose: klaasie/questionnaire/index
+
+# Update page
+update:
+    title: Edit Index
+    redirect: klaasie/questionnaire/index
+    redirectClose: klaasie/questionnaire/index
+
+# Preview page
+preview:
+    title: Preview Index

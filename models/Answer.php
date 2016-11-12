@@ -29,7 +29,10 @@ class Answer extends Model
     /** {@inheritdoc} */
     public $belongsTo = [
         'question' => Question::class,
-        'followUpQuestion' => Question::class
+        'followUpQuestion' => [
+            Question::class,
+            'key' => 'follow_up_question'
+        ]
     ];
 
     /**
@@ -68,6 +71,11 @@ class Answer extends Model
         return $this;
     }
 
+    public function hasFollowUpQuestion()
+    {
+        return (bool) $this->getFollowUpQuestion();
+    }
+
     /**
      * @return Question
      */
@@ -80,7 +88,7 @@ class Answer extends Model
      * @param Question $followUpQuestion
      * @return $this
      */
-    public function setAttribute(Question $followUpQuestion)
+    public function setFollowUpQuestion(Question $followUpQuestion)
     {
         $this->setAttribute('followUpQuestion', $followUpQuestion);
         return $this;

@@ -21,7 +21,7 @@ class CreateAnswersTable extends Migration
         Schema::create('klaasie_questionnaire_answers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->unsignedInteger('question_id');
+            $table->unsignedInteger('question_id')->nullable();
             $table->string('text');
             $table->unsignedInteger('follow_up_question')->nullable();
             $table->timestamps();

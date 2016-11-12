@@ -2,6 +2,7 @@
 
 namespace Klaasie\Questionnaire\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Model;
 use October\Rain\Database\Traits\Sortable;
 
@@ -68,6 +69,14 @@ class Question extends Model
     {
         $this->setAttribute('text', $text);
         return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getAnswers()
+    {
+        return $this->answers()->get();
     }
 
     /**

@@ -3,6 +3,7 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    text:
+        label: Answer
+        type: textarea
+        size: small

@@ -3,6 +3,14 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    category:
+        label: Category
+        type: relation
+        nameFrom: name
+    text:
+        label: Question
+        type: textarea
+        size: small
+    answers:
+        label: Answers
+        type: partial

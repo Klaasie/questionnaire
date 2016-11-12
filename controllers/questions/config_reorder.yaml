@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: Reorder questions
+
+# Attribute name
+nameFrom: text
+
+# Model Class name
+modelClass: Klaasie\Questionnaire\Models\Question
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

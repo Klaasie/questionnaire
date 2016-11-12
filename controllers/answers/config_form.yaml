@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Answer
+
+# Model Form Field configuration
+form: $/klaasie/questionnaire/models/answer/fields.yaml
+
+# Model Class name
+modelClass: Klaasie\Questionnaire\Models\Answer
+
+# Default redirect location
+defaultRedirect: klaasie/questionnaire/answers
+
+# Create page
+create:
+    title: Create Answer
+    redirect: klaasie/questionnaire/answers/update/:id
+    redirectClose: klaasie/questionnaire/answers
+
+# Update page
+update:
+    title: Edit Answer
+    redirect: klaasie/questionnaire/answers
+    redirectClose: klaasie/questionnaire/answers
+
+# Preview page
+preview:
+    title: Preview Answer

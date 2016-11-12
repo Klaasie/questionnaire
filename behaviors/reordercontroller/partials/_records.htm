@@ -1,0 +1,28 @@
+<?php foreach ($records as $record): ?>
+
+    <li data-record-id="<?= $record->getKey() ?>" data-record-sort-order="<?= $record->sort_order ?>">
+        <div class="record">
+            <a href="javascript:;" class="move"></a>
+            <span>
+                <?php if(isset($answer)): ?>
+                    <?= $answer->getText(); ?>:
+                <?php endif; ?>
+                <?= $this->reorderGetRecordName($record) ?>
+            </span>
+        </div>
+
+        <?php if ($reorderShowTree): ?>
+            <ol>
+                <?php $answers = $record->getAnswers(); ?>
+                <?php foreach ($answers as $answer): ?>
+                    <?php if ($answer->hasFollowUpQuestion()): ?>
+                        <?php $question = $answer->getFollowUpQuestion() ?>
+                        <?= $this->reorderMakePartial('records', ['records' => [$question], 'answer' => $answer]) ?>
+                    <?php endif ?>
+                <?php endforeach; ?>
+                <?php $answer = null; ?>
+            </ol>
+        <?php endif ?>
+    </li>
+
+<?php endforeach ?>
