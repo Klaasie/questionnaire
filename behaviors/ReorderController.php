@@ -77,6 +77,12 @@ class ReorderController extends ReorderControllerBase
 
         $question->setSortOrder(1);
         $question->save();
+
+        $this->prepareVars();
+
+        return [
+            '#questionnaire' => $this->reorderRender()
+        ];
     }
 
     /**
@@ -85,8 +91,6 @@ class ReorderController extends ReorderControllerBase
     public function onReorder()
     {
         $model = $this->validateModel();
-
-        $action = Input::get('position');
 
         if (!$ids = post('sort_ids')) {
             return;
@@ -100,33 +104,11 @@ class ReorderController extends ReorderControllerBase
 
         Answer::whereIn('follow_up_question', $ids)->update(['follow_up_question' => null]);
 
-//        /*
-//         * Nested set
-//         */
-//        elseif ($this->sortMode == 'nested') {
-//            $sourceNode = $model->find(post('sourceNode'));
-//            $targetNode = post('targetNode') ? $model->find(post('targetNode')) : null;
-//
-//            if ($sourceNode == $targetNode) return;
-//
-//            switch (post('position')) {
-//                case 'before':
-//                    $sourceNode->moveBefore($targetNode);
-//                    break;
-//
-//                case 'after':
-//                    $sourceNode->moveAfter($targetNode);
-//                    break;
-//
-//                case 'child':
-//                    $sourceNode->makeChildOf($targetNode);
-//                    break;
-//
-//                default:
-//                    $sourceNode->makeRoot();
-//                    break;
-//            }
-//        }
+        $this->prepareVars();
+
+        return [
+            '#questionnaire' => $this->reorderRender()
+        ];
     }
 
     /**

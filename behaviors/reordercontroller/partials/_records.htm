@@ -11,18 +11,16 @@
             </span>
         </div>
 
-        <?php if ($reorderShowTree): ?>
-            <ol>
-                <?php $answers = $record->getAnswers(); ?>
-                <?php foreach ($answers as $answer): ?>
-                    <?php if ($answer->hasFollowUpQuestion()): ?>
-                        <?php $question = $answer->getFollowUpQuestion() ?>
-                        <?= $this->reorderMakePartial('records', ['records' => [$question], 'answer' => $answer]) ?>
-                    <?php endif ?>
-                <?php endforeach; ?>
-                <?php $answer = null; ?>
-            </ol>
-        <?php endif ?>
+        <ol>
+            <?php $answers = $record->getAnswers(); ?>
+            <?php foreach ($answers as $answer): ?>
+                <?php if ($answer->hasFollowUpQuestion()): ?>
+                    <?php $question = $answer->getFollowUpQuestion() ?>
+                    <?= $this->reorderMakePartial('records', ['records' => [$question], 'answer' => $answer]) ?>
+                <?php endif ?>
+            <?php endforeach; ?>
+            <?php $answer = null; ?>
+        </ol>
     </li>
 
 <?php endforeach ?>

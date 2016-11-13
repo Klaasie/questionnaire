@@ -21,6 +21,7 @@
 
         this.processReorder = function(ev, sortData){
             var postData
+            var self = this;
 
             this.initSortingSimple()
             postData = this.getNestedMoveData(sortData)
@@ -52,7 +53,6 @@
 
             if (($el = $item.parents('li:first')) && $el.length) {
                 moveData.position = 'child';
-                // Open popup
             }
             else if (($el = $item.next()) && $el.length) {
                 moveData.position = 'before'
